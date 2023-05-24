@@ -3,6 +3,7 @@ import { Pagination } from "swiper";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import '../../../app.css'
 
 import slide1 from '../../../assets/home/slide1.jpg'
 import slide2 from '../../../assets/home/slide2.jpg'
@@ -24,23 +25,23 @@ const Category = () => {
     >
       <SwiperSlide >
         <img src={slide1} alt="" />
-        <h3 className="text-white text-center -mt-16 text-4xl uppercase">Salads</h3>
+        <h3 className="text-white text-center font-cenizel mb-4 text-shadow -mt-16 text-4xl uppercase">Salads</h3>
       </SwiperSlide>
       <SwiperSlide>
         <img src={slide2} alt="" />
-        <h3 className="text-white text-center -mt-16 text-4xl uppercase">Pizzas</h3>
+        <h3 className="text-white text-center font-cenizel mb-4 text-shadow -mt-16 text-4xl uppercase">Pizzas</h3>
       </SwiperSlide>
       <SwiperSlide>
         <img src={slide3} alt="" />
-        <h3 className="text-white text-center -mt-16 text-4xl uppercase">Soups</h3>
+        <h3 className="text-white text-center font-cenizel text-shadow mb-4  -mt-16 text-4xl uppercase">Soups</h3>
       </SwiperSlide>
       <SwiperSlide>
         <img src={slide4} alt="" />
-        <h3 className="text-white text-center -mt-16 text-4xl uppercase">Desserts</h3>
+        <h3 className="text-white text-center font-cenizel text-shadow mb-4  -mt-16 text-4xl uppercase">Desserts</h3>
       </SwiperSlide>
       <SwiperSlide>
         <img src={slide5} alt="" />
-        <h3 className="text-white text-center -mt-16 text-4xl uppercase">Salads</h3>
+        <h3 className="text-white text-center font-cenizel text-shadow mb-4  -mt-16 text-4xl uppercase">Salads</h3>
       </SwiperSlide>
       
     </Swiper>
