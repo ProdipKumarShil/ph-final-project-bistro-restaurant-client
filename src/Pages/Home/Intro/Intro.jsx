@@ -4,7 +4,7 @@ const Intro = () => {
   return (
     <div className=''>
       <img className='h-[572px] object-cover ' src={img} alt="" />
-      <div className="relative bg-white">
+      <div className="relative inset-0 bg-white">
         <h1>Bistro Boss</h1>
         <p>
           Welcome to Bistro Boss, where culinary excellence meets warm hospitality! Nestled in the heart of City, our restaurant is a haven for food enthusiasts seeking an unforgettable dining experience. With our passion for flavor, creativity, and impeccable service, we aim to surpass your expectations and leave you craving for more.
