@@ -1,4 +1,4 @@
-
+import { FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo/logo.png'
 import { useContext } from 'react';
@@ -9,7 +9,7 @@ const NavBar = () => {
 
   const handleLogOut = () => {
     logOut()
-      .then(() => {})
+      .then(() => { })
       .catch(err => console.log(err))
   }
 
@@ -18,9 +18,20 @@ const NavBar = () => {
     <li><Link to='/menu'>Our Menu</Link></li>
     <li><Link to='/order/salad'>Order Food</Link></li>
     <li><Link to='/secret'>Secret</Link></li>
-
+    <li>
+      <Link to='/'>
+        <button className="btn gap-2">
+          <FaShoppingCart />
+          <div className="badge badge-secondary">+0</div>
+        </button>
+      </Link>
+    </li>
     {
-      user ? <><button onClick={handleLogOut} className='btn btn-ghost'>Log Out</button></> : <><li><Link to='/login'>Login</Link></li></>
+      user ? <>
+        <button onClick={handleLogOut} className='btn btn-ghost'>Log Out</button>
+      </> : <>
+        <li><Link to='/login'>Login</Link></li>
+      </>
     }
   </>
 

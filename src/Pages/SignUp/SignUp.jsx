@@ -2,14 +2,16 @@ import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../providers/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 
 const SignUp = () => {
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
-  const {createUser} = useContext(AuthContext)
+  const { register, handleSubmit, reset, formState: { errors } } = useForm();
+  const { createUser, updateUserProfile } = useContext(AuthContext)
+  const navigate = useNavigate();
 
   const onSubmit = data => {
     console.log(data)
@@ -17,6 +19,20 @@ const SignUp = () => {
       .then(result => {
         const loggedUser = result.user
         console.log(loggedUser)
+        updateUserProfile(data.name, data.photoURL)
+          .then(() => {
+            console.log('user profile info updated')
+            reset()
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'User Created Successfully',
+              showConfirmButton: false,
+              timer: 1500
+            });
+            navigate('/')
+          })
+          .catch(error => console.log(error))
       })
   }
 
@@ -79,7 +95,7 @@ const SignUp = () => {
                 <input className="btn btn-primary" type="submit" value="Sign Up" />
               </div>
             </div>
-          <p><small>Already have an account? <Link to='/login'>Login</Link></small></p>
+            <p><small>Already have an account? <Link to='/login'>Login</Link></small></p>
           </form>
         </div>
       </div>
